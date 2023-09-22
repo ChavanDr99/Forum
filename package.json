@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^1.5.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "html-react-parser": "^4.2.1",
+    "javascript-time-ago": "^2.5.9",
+    "mongoose": "^7.5.0",
+    "nodemon": "^3.0.1",
+    "react-icons": "^4.10.1",
+    "react-quill": "^2.0.0",
+    "react-redux": "^8.1.2",
+    "react-responsive-modal": "^6.4.2",
+    "react-time-ago": "^7.2.1"
+  },
+  "name": "forum",
+  "version": "1.0.0",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm start --prefix fronted",
+    "server": "nodemon Backend/Server",
+    "start": "nodemon --watch Backend --exec node Backend/Server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
