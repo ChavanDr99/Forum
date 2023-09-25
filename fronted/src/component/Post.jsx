@@ -76,7 +76,7 @@ const Post = ({ post }) => {
   };
 
   return (
-    <div className="flex flex-col p-2 bg-white mt-3 ml-8 max-md:ml-0 border border-lightgray rounded-lg w-[60%] max-md:w-[100%] shadow-md">
+    <div className="flex flex-col p-2 bg-white mt-3 ml-8 max-md:ml-0 border border-lightgray rounded-lg w-[80%] max-md:w-[100%] shadow-md">
       <div className="flex items-center">
         <Avatar src={post?.user?.photo} />
         <h4 className="ml-2 cursor-pointer text-sm">{post?.user?.userName}</h4>
@@ -90,19 +90,22 @@ const Post = ({ post }) => {
         <div className="mt-5 font-bold mb-5 cursor-pointer flex items-center flex-1">
           <p>{post?.questionName}</p>
           <button onClick={() => setIsModalOpen(true)} className='ml-auto cursor-pointer px-3 py-1 bg-gray-800 outline-none border-none text-gray-100 font-light text-sm rounded-md'>Answer</button>
+
           <Modal open={IsModalOpen} CloseIcon={Close}
             onClose={() => setIsModalOpen(false)}
-            center>
-            <div className="flex flex-col items-center mt-2">
-              <h1 className=" text-3xl text-red-700 font-semibold mb-2">{post?.questionName}</h1>
-              <p className="text-gray-500 text-sm"> asked by{" "} <span className="font-bold">{post?.user?.userName}</span > on <span className="font-bold">  {new Date(post?.createdAt).toLocaleString()}</span ></p>
+            center classNames={{
+              modal:'postModal1'
+            }}>
+            <div className="flex flex-col items-center mt-3">
+              <h1 className=" text-3xl max-md:text-2xl text-red-700 font-semibold">{post?.questionName}</h1>
+              <p className="text-gray-500 text-sm"> Asked by{" "} <span className="font-bold">{post?.user?.userName}</span > on <span className="font-bold">  {new Date(post?.createdAt).toLocaleString()}</span ></p>
             </div>
-            <div class="modal__answer flex pt-4 flex-1">
+            <div class="modal__answer flex pt-2 flex-1">
               <ReactQuill value={answer} onChange={handleQuill} placeholder="Enter Your Answer" />
             </div>
             <div className="flex items-center justify-between mt-10 w-full">
-              <button onClick={() => setIsModalOpen(false)} className='   hover:text-red-500 border-none mt-4 outline-none bg-gray-300 text-gray-500 font-semibold px-4 py-2 rounded-full cursor-pointer'>Cancel</button>
-              <button onClick={handleSubmit} type='submit' className='border-none outline-none mt-2 bg-gray-900 text-white hover:bg-gray-300 hover:text-gray-900 font-bold px-4 py-2 rounded-full cursor-pointer w-1/2'> Add Answer</button>
+              <button onClick={() => setIsModalOpen(false)} className='   hover:text-red-500 border-none m-2 max-md:mt-10 md:mt-5 outline-none bg-gray-300 text-gray-500 font-semibold px-4 py-2 rounded-full cursor-pointer'>Cancel</button>
+              <button onClick={handleSubmit} type='submit' className='border-none outline-none m-2 max-md:mt-10 md:mt-5 bg-gray-900 text-white hover:bg-gray-300 hover:text-gray-900 font-bold px-4 py-2 rounded-full cursor-pointer w-1/2'> Add Answer</button>
 
             </div>
           </Modal>
