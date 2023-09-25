@@ -3,10 +3,7 @@ import {useState} from 'react'
 import {
   ArrowDownwardOutlined,
   ArrowUpwardOutlined,
-  ChatBubbleOutlined,
-  MoreHorizOutlined,
-  RepeatOneOutlined,
-  ShareOutlined,
+
 } from "@material-ui/icons";
 import '../css/Post.css'
 import {Modal} from 'react-responsive-modal'
@@ -18,6 +15,8 @@ import ReactTimeAgo from "react-time-ago";
 import axios from 'axios';
 import { useSelector } from "react-redux";
 import { selectUser } from "../feature/userSlice";
+
+
 
 function LastSeen({ date }) {
   return (
@@ -32,6 +31,7 @@ const Post = ({post}) => {
   const Close=(<CloseIcon/>)
   const [showAnswers, setShowAnswers] = useState(false);
   const user = useSelector(selectUser);
+
   const handleQuill = (value) => {
     setAnswer(value);
   };
@@ -59,6 +59,14 @@ const Post = ({post}) => {
           alert("Answer added succesfully");
           setIsModalOpen(false);
           window.location.href = "/";
+          toast.success('Answer added successfully!', {
+            position: 'top-center',
+            autoClose: 3000, // Close the toast after 3 seconds (adjust as needed)
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
         })
         .catch((e) => {
           console.log(e);

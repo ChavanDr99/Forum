@@ -11,7 +11,7 @@ function FeedBox() {
       <Avatar src={user?.photo} />
       </div>
       <div className="flex mt-2">
-        <h5>What is your question or link?</h5>
+        <h5 className="font-bold">What is your question or link?</h5>
       </div>
     </div>
   );
