@@ -4,16 +4,15 @@ import Feed from './Feed'
 import SideImage from './SideImage'
 const Forum = () => {
   return (
-    <div className="w-full min-w-fit">
+    <div className="w-[100%]">
       <Header/>
-     <div className="flex justify-center py-10 bg-opacity-5 bg-black min-w-min w-full">
-    <div className="flex flex-row max-md:flex-col px-2 w-full max-w-screen-xl ">
+     
+      <div className="flex flex-row justify-between px-10 mt-5 max-md:flex-col w-[100%] pb-5">
       <SideImage/>
       <Feed/>
     </div>
    </div>
 
-    </div>
   )
 }
 

@@ -32,3 +32,11 @@ body {
     --vp: 0.052vw;
     --vm: 0.278vw;
   }
+
+  .customModal{
+    width: 90%;
+  }
+  .postModal1{
+    width: 90%;
+    padding-bottom: 0;
+  }
