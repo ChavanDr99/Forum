@@ -61,7 +61,7 @@ const Post = ({ post }) => {
           window.location.href = "/";
           toast.success('Answer added successfully!', {
             position: 'top-center',
-            autoClose: 3000, // Close the toast after 3 seconds (adjust as needed)
+            autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
